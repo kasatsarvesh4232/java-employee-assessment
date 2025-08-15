@@ -98,7 +98,7 @@ public class EmployeeControllerTest {
     @Test
     void test_createEmployee_Success() throws Exception {
         CreateMockEmployeeInput mockEmployeeInput = new CreateMockEmployeeInput();
-        mockEmployeeInput.setName("Alice");
+        mockEmployeeInput.setName("Mike");
         mockEmployeeInput.setAge(29);
         mockEmployeeInput.setSalary(7899000);
         mockEmployeeInput.setTitle("Project Manager");
@@ -109,15 +109,15 @@ public class EmployeeControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("""
                                 {
-                                    "name": "Alice",
+                                    "name": "Mike",
                                     "salary": 600000,
                                     "age": 30,
                                     "title": "Engineer",
-                                    "email": "alice@example.com"
+                                    "email": "mike@gmail.com"
                                 }
                                 """))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.employee_name", is("Alice")));
+                .andExpect(jsonPath("$.employee_name", is("Mike")));
     }
 
     @Test
